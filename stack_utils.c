@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:40:02 by yucchen           #+#    #+#             */
-/*   Updated: 2025/09/24 16:45:07 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/01 16:54:42 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_node	*new_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->prev = NULL;
 	node->next = NULL;
 	return (node);
 }
@@ -32,14 +33,15 @@ t_stack	*init_stack(void)
 	if (!stack)
 		return (NULL);
 	stack->top = NULL;
+	stack->bottom = NULL;
 	stack->size = 0;
 	return (stack);
 }
 
-int	is_empty(t_stack *stack)
+/* int	is_empty(t_stack *stack)
 {
 	return (!stack || stack->size == 0);
-}
+} */
 
 void	free_stack(t_stack *stack)
 {

@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:00:57 by yucchen           #+#    #+#             */
-/*   Updated: 2025/08/29 16:13:51 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/09/29 12:48:09 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 # include <stdarg.h> // va_list
 # include <stdint.h> // uintptr_t
-# include <stdlib.h> // malloc
+# include <stdlib.h> // malloc, free
 # include <unistd.h> // write, read, close, execve, pipe
 
 /* ------------------------------ */

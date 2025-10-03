@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:41:24 by yucchen           #+#    #+#             */
-/*   Updated: 2025/09/28 14:11:53 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/09/29 15:34:36 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ char	**split_argv(int argc, char **argv, size_t *cnt)
 	size_t	str_len;
 	char	**tokens;
 
+	*cnt = 1;
 	str = join_args(argc, argv);
 	if (!str)
 		return (NULL);
@@ -85,10 +86,7 @@ char	**split_argv(int argc, char **argv, size_t *cnt)
 		return (free(temp), NULL);
 	tokens = split_tokens(*cnt, &temp, &str_len);
 	if (!tokens)
-	{
-		*cnt = 0;
 		return (free(temp), NULL);
-	}
 	free(temp);
 	return (tokens);
 }

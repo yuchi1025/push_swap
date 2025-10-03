@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 13:04:19 by yucchen           #+#    #+#             */
-/*   Updated: 2025/09/28 18:33:48 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/09/29 13:08:08 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*join_args(int argc, char **argv)
 	char	*temp;
 	char	*str;
 
-	if (argc == 1)
-		return (NULL);
 	i = 2;
 	str = ft_strdup(argv[1]);
 	if (!str)
