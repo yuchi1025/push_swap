@@ -6,27 +6,11 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:28:15 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/01 13:29:02 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 20:16:57 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_stack *stack_a)
-{
-	t_node	*node;
-
-	if (!stack_a || stack_a->size < 2)
-		return (1);
-	node = stack_a->top;
-	while (node->next)
-	{
-		if (node->next->value < node->value)
-			return (0);
-		node = node->next;
-	}
-	return (1);
-}
 
 int	find_min(t_stack *stack_a)
 {
@@ -58,6 +42,8 @@ void	bring_min_to_top(int index, t_stack *stack_a)
 	int	ra_num;
 	int	rra_num;
 
+	if (index == 0)
+		return ;
 	i = 0;
 	ra_num = index;
 	rra_num = stack_a->size - index;

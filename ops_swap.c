@@ -6,12 +6,11 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:22:18 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/02 17:32:40 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 18:13:42 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 static int	swap(t_stack *stack)
 {
@@ -50,11 +49,11 @@ void	swap_b(t_stack *stack_b)
 
 void	swap_swap(t_stack *stack_a, t_stack *stack_b)
 {
-	int	sa;
-	int	sb;
-
-	sa = swap(stack_a);
-	sb = swap(stack_b);
-	if (sa && sb)
-		write(1, "ss\n", 3);
+	if (!stack_a || !stack_b)
+		return ;
+	if (stack_a->size < 2 || stack_b->size < 2)
+		return ;
+	swap(stack_a);
+	swap(stack_b);
+	write(1, "ss\n", 3);
 }

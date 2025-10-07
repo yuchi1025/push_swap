@@ -6,12 +6,11 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:47:40 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/02 17:33:09 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 20:05:51 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 static int	reverse_rotate(t_stack *stack)
 {
@@ -47,11 +46,11 @@ void	reverse_rotate_b(t_stack *stack_b)
 
 void	reverse_rotate_both(t_stack *stack_a, t_stack *stack_b)
 {
-	int	rra;
-	int	rrb;
-
-	rra = reverse_rotate(stack_a);
-	rrb = reverse_rotate(stack_b);
-	if (rra && rrb)
-		write(1, "rrr\n", 4);
+	if (!stack_a || !stack_b)
+		return ;
+	if (stack_a->size < 2 || stack_b->size < 2)
+		return ;
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
+	write(1, "rrr\n", 4);
 }

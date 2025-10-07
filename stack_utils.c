@@ -6,13 +6,13 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:40:02 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/01 16:54:42 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 18:02:17 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*new_node(int value)
+static t_node	*new_node(int value)
 {
 	t_node	*node;
 
@@ -38,10 +38,29 @@ t_stack	*init_stack(void)
 	return (stack);
 }
 
-/* int	is_empty(t_stack *stack)
+int	push_bottom(t_stack *stack, int value)
 {
-	return (!stack || stack->size == 0);
-} */
+	t_node	*node;
+
+	if (!stack)
+		return (0);
+	node = new_node(value);
+	if (!node)
+		return (0);
+	if (stack->size == 0)
+	{
+		node->prev = NULL;
+		stack->top = node;
+	}
+	else
+	{
+		node->prev = stack->bottom;
+		stack->bottom->next = node;
+	}
+	stack->bottom = node;
+	stack->size++;
+	return (1);
+}
 
 void	free_stack(t_stack *stack)
 {
@@ -58,4 +77,20 @@ void	free_stack(t_stack *stack)
 		current = next;
 	}
 	free(stack);
+}
+
+int	is_sorted(t_stack *stack_a)
+{
+	t_node	*node;
+
+	if (!stack_a || stack_a->size < 2)
+		return (1);
+	node = stack_a->top;
+	while (node->next)
+	{
+		if (node->next->value < node->value)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:25:16 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/01 16:55:07 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 13:06:10 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 // Node
 typedef struct s_node
@@ -42,6 +43,12 @@ char				**split_argv(int argc, char **argv, size_t *cnt);
 // number_check.c
 int					is_valid_token(char **tokens, size_t cnt, int **arr);
 
+// stack_utils.c
+t_stack				*init_stack(void);
+int					push_bottom(t_stack *stack, int value);
+void				free_stack(t_stack *stack);
+int					is_sorted(t_stack *stack_a);
+
 // ops_swap.c
 void				swap_a(t_stack *stack_a);
 void				swap_b(t_stack *stack_b);
@@ -62,19 +69,13 @@ void				reverse_rotate_b(t_stack *stack_b);
 void				reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
 
 // sort_small_utils.c
-int					is_sorted(t_stack *stack_a);
 int					find_min(t_stack *stack_a);
 void				bring_min_to_top(int index, t_stack *stack_a);
 
 // sort_small.c
 void				sort_small(t_stack *stack_a, t_stack *stack_b);
 
-// stack_utils.c
-t_node				*new_node(int value);
-t_stack				*init_stack(void);
-void				free_stack(t_stack *stack);
-
-// stack_operations.c
-int					push_bottom(t_stack *stack, int value);
+// radix_sort.c
+void				radix_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif

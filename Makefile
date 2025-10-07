@@ -6,7 +6,7 @@
 #    By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/24 15:17:57 by yucchen           #+#    #+#              #
-#    Updated: 2025/10/01 16:52:43 by yucchen          ###   ########.fr        #
+#    Updated: 2025/10/07 14:08:10 by yucchen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,14 @@ NAME = push_swap
 SOURCES = split_argv_utils.c \
 		  split_argv.c \
 		  number_check.c \
+		  stack_utils.c \
 		  ops_swap.c \
 		  ops_push.c \
 		  ops_rotate.c \
 		  ops_reverse_rotate.c \
 		  sort_small_utils.c \
 		  sort_small.c \
-		  stack_operations.c \
-		  stack_utils.c \
+		  radix_sort.c \
 		  main.c
 OBJECTS = $(SOURCES:.c=.o)
 

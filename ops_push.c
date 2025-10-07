@@ -6,12 +6,11 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 18:08:59 by yucchen           #+#    #+#             */
-/*   Updated: 2025/09/30 15:40:32 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 18:32:37 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
 
 static t_node	*pop_top(t_stack *src)
 {
@@ -31,8 +30,6 @@ static t_node	*pop_top(t_stack *src)
 		src->top->prev = NULL;
 	}
 	src->size--;
-	first->prev = NULL;
-	first->next = NULL;
 	return (first);
 }
 
@@ -61,6 +58,8 @@ static int	push(t_stack *src, t_stack *dst)
 {
 	t_node	*first;
 
+	if (src == dst)
+		return (0);
 	if (!src || !dst || src->size == 0)
 		return (0);
 	first = pop_top(src);

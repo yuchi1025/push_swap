@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:45:23 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/01 16:54:23 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/07 20:36:28 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,19 @@ void	sort_small(t_stack *stack_a, t_stack *stack_b)
 {
 	int	size;
 
+	if (!stack_a)
+		return ;
 	size = stack_a->size;
-	if (!stack_a || size < 2)
+	if (size < 2)
 		return ;
 	if (size == 2)
 		sort_2(stack_a);
 	else if (size == 3)
 		sort_3(stack_a);
-	else if (size == 4)
+	else if (size == 4 && stack_b)
 		sort_4(stack_a, stack_b);
-	else
+	else if (size == 5 && stack_b)
 		sort_5(stack_a, stack_b);
+	else
+		return ;
 }
