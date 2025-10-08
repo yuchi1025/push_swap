@@ -6,14 +6,13 @@
 #    By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/24 15:17:57 by yucchen           #+#    #+#              #
-#    Updated: 2025/10/07 14:08:10 by yucchen          ###   ########.fr        #
+#    Updated: 2025/10/08 11:50:24 by yucchen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Compiler and parameters
+# Compiler and flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-MAKE = make
 
 # File name and file list
 NAME = push_swap
@@ -45,6 +44,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS) $(LIBFT_AR)
 	$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT_AR) -o $(NAME)
 
+# Build libft
 $(LIBFT_AR):
 	$(MAKE) -C $(LIBFT_DIR)
 

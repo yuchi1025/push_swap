@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:00:57 by yucchen           #+#    #+#             */
-/*   Updated: 2025/09/29 12:48:09 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/08 12:32:17 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int					ft_printf(const char *format, ...);
 /*         get_next_line          */
 /* ------------------------------ */
 
-char				*get_next_line(int fd);
-void				free_all_storage(void);
+//char				*get_next_line(int fd);
+//void				free_all_storage(void);
 
 #endif

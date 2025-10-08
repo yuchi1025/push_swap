@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:25:16 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/07 13:06:10 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/08 11:56:14 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void				rotate_a(t_stack *stack_a);
 void				rotate_b(t_stack *stack_b);
 void				rotate_both(t_stack *stack_a, t_stack *stack_b);
 
-// ops_reverse_ratate.c
+// ops_reverse_rotate.c
 void				reverse_rotate_a(t_stack *stack_a);
 void				reverse_rotate_b(t_stack *stack_b);
 void				reverse_rotate_both(t_stack *stack_a, t_stack *stack_b);
