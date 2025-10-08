@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 15:40:02 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/07 18:02:17 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/08 17:32:16 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,7 @@ int	push_bottom(t_stack *stack, int value)
 	if (!node)
 		return (0);
 	if (stack->size == 0)
-	{
-		node->prev = NULL;
 		stack->top = node;
-	}
 	else
 	{
 		node->prev = stack->bottom;
@@ -83,7 +80,7 @@ int	is_sorted(t_stack *stack_a)
 {
 	t_node	*node;
 
-	if (!stack_a || stack_a->size < 2)
+	if (stack_a->size < 2)
 		return (1);
 	node = stack_a->top;
 	while (node->next)

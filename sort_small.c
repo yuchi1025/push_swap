@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:45:23 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/07 20:36:28 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/08 18:05:57 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 static void	sort_2(t_stack *stack_a)
 {
-	if (!stack_a || !stack_a->top || !stack_a->top->next)
+	t_node	*first;
+	t_node	*second;
+
+	if (!stack_a || stack_a->size < 2)
 		return ;
-	if (stack_a->top->value > stack_a->top->next->value)
+	first = stack_a->top;
+	second = first->next;
+	if (first->value > second->value)
 		swap_a(stack_a);
 }
 

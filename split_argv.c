@@ -6,7 +6,7 @@
 /*   By: yucchen <yucchen@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 16:41:24 by yucchen           #+#    #+#             */
-/*   Updated: 2025/10/07 15:33:12 by yucchen          ###   ########.fr       */
+/*   Updated: 2025/10/08 16:44:27 by yucchen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,10 @@ static char	**split_tokens(size_t cnt, char *temp, size_t str_len)
 	tokens = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (!tokens)
 		return (NULL);
-	if (store_tokens(str_len, temp, tokens))
-	{
-		tokens[cnt] = NULL;
-		return (tokens);
-	}
-	return (NULL);
+	if (!store_tokens(str_len, temp, tokens))
+		return (NULL);
+	tokens[cnt] = NULL;
+	return (tokens);
 }
 
 char	**split_argv(int argc, char **argv, size_t *cnt)
@@ -77,7 +75,6 @@ char	**split_argv(int argc, char **argv, size_t *cnt)
 	size_t	str_len;
 	char	**tokens;
 
-	*cnt = 1;
 	str = join_args(argc, argv);
 	if (!str)
 		return (NULL);
